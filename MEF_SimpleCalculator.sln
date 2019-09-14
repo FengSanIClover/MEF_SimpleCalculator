@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEF_SimpleCalculator", "MEF_SimpleCalculator\MEF_SimpleCalculator.csproj", "{794B625B-A622-4CBD-8898-4A0F55951991}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MEF_SimpleCalculator.Interfaces", "MEF_SimpleCalculator.Interfaces\MEF_SimpleCalculator.Interfaces.csproj", "{AADFD29B-DE23-4FE3-8DEA-F3FFCF93D236}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEF_SimpleCalculator.Servies", "MEF_SimpleCalculator.Servies\MEF_SimpleCalculator.Servies.csproj", "{2056BAB8-8E4D-4532-8104-BC9FD97E1968}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{794B625B-A622-4CBD-8898-4A0F55951991}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{794B625B-A622-4CBD-8898-4A0F55951991}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{794B625B-A622-4CBD-8898-4A0F55951991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AADFD29B-DE23-4FE3-8DEA-F3FFCF93D236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AADFD29B-DE23-4FE3-8DEA-F3FFCF93D236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AADFD29B-DE23-4FE3-8DEA-F3FFCF93D236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AADFD29B-DE23-4FE3-8DEA-F3FFCF93D236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2056BAB8-8E4D-4532-8104-BC9FD97E1968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2056BAB8-8E4D-4532-8104-BC9FD97E1968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2056BAB8-8E4D-4532-8104-BC9FD97E1968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2056BAB8-8E4D-4532-8104-BC9FD97E1968}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

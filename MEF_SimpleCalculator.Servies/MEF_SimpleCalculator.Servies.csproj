@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
@@ -10,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MEF_SimpleCalculator.Servies\MEF_SimpleCalculator.Servies.csproj" />
+    <ProjectReference Include="..\MEF_SimpleCalculator.Interfaces\MEF_SimpleCalculator.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>
