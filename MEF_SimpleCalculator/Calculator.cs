@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.Text;
+// 引用名稱空間
+using System.ComponentModel.Composition;
 
 namespace MEF_SimpleCalculator
 {
@@ -11,6 +12,18 @@ namespace MEF_SimpleCalculator
     [Export(typeof(ICalculator))] // 指定匯出(契約類型為 ICalculator)
     public class Calculator : ICalculator
     {
+        /// <summary>
+        /// 匯入運算邏輯與運算符號
+        /// </summary>
+        /// <remarks>
+        /// 除了匯出的物件本身之外，也會取得 匯出中繼資料 或描述所匯出物件的資訊
+        /// </remarks>
+        /// <remarks>
+        /// Lazy<T,TMetadata>
+        /// </remarks>
+        [ImportMany]
+        private IEnumerable<Lazy<ICalcLogic, ICalcSymbol>> calculates;
+
         /// <summary>
         /// 計算機方法
         /// </summary>
@@ -40,19 +53,16 @@ namespace MEF_SimpleCalculator
             // 運算符號
             string symbol = inputStr[symbolIndex].ToString();
 
-            switch (symbol)
+            // 讀取匯入的運算邏輯與運算符號，執行運算
+            foreach (Lazy<ICalcLogic, ICalcSymbol> calculate in calculates)
             {
-                case "+":
-                    return $"{left + right}";
-                case "-":
-                    return $"{left - right}";
-                case "*":
-                    return $"{left * right}";
-                case "/":
-                    return $"{left / right}";
-                default:
-                    return "此計算機無此運算方法";
+                // 在 foreach 迴圈中，會檢查 operations 集合的每個成員。 
+                // 分別可以使用 Metadata 屬性和 Value 屬性來存取它們的中繼資料值和所匯出的物件。 
+                if (calculate.Metadata.Symbol.Equals(symbol))
+                    return calculate.Value.Calculate(left, right).ToString();
             }
+
+            return "此計算機無此運算方法";
         }
 
         /// <summary>
