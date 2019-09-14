@@ -16,7 +16,10 @@ namespace MEF_SimpleCalculator
             var aggregateCatalog = new AggregateCatalog();
 
             // 將此類別內的組件加入目錄內
-            aggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(Program).Assembly));
+            // aggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(Program).Assembly));
+
+            // new DirectoryCatalog("組件路徑","篩選組件條件")
+            aggregateCatalog.Catalogs.Add(new DirectoryCatalog(@"C:\Users\User\Desktop\昕力年度文章\MEF_SimpleCalculator\MEF_SimpleCalculator\bin\Debug\netcoreapp2.2", "*.dll"));
 
             // 將包含所有 組件 的 目錄 建立 組合容器
             this.compositionContainer = new CompositionContainer(aggregateCatalog);
