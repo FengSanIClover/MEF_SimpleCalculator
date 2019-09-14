@@ -50,7 +50,7 @@ namespace MEF_SimpleCalculator
                 var inputStr = Console.ReadLine();
 
                 // 顯示計算結果
-                Console.WriteLine(program.calculator.Calculate(inputStr));
+                Console.WriteLine($"計算結果:{ program.calculator.Calculate(inputStr)}");
             }
         }
     }
